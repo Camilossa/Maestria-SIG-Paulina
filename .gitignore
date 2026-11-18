@@ -1,0 +1,16 @@
+# --- Datos: NO se suben a GitHub (≈ 50 GB). Están en el Drive; ver "Datos" en el README ---
+datos.nosync/
+*.tif
+*.tif.*
+*.joblib
+*.partial
+
+# --- Entorno de Python (uv lo recrea con `uv sync`) ---
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Archivos del sistema ---
+.DS_Store
+*.crdownload

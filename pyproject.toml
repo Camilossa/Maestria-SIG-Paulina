@@ -1,0 +1,28 @@
+[project]
+name = "deforestacion-huila"
+version = "1.0.0"
+description = "Análisis espacio-temporal de la deforestación en el Huila (2017–2025) con Machine Learning y embeddings de Google AlphaEarth Foundations"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+
+# Librerías que usa el proyecto (uv las instala solas con `uv sync`)
+dependencies = [
+    "numpy>=1.26",          # cálculos con matrices (los mapas son matrices de números)
+    "pandas>=2.2",          # tablas
+    "rasterio>=1.4",        # leer y escribir mapas GeoTIFF (.tif)
+    "scikit-learn>=1.5",    # Random Forest, SVM y las métricas
+    "xgboost>=2.1",         # XGBoost
+    "joblib>=1.4",          # guardar y cargar los modelos entrenados
+    "matplotlib>=3.9",      # gráficas
+    "geopandas>=1.0",       # leer las capas de hidrografía (.shp)
+    "earthengine-api>=1.1", # Dynamic World en Google Earth Engine
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3"]       # solo para la prueba automática (carpeta pruebas/)
+
+[tool.uv]
+package = false             # no es una librería: son scripts que se ejecutan uno por uno
+
+[tool.pytest.ini_options]
+testpaths = ["pruebas"]
